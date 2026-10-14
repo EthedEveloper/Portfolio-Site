@@ -1,5 +1,10 @@
 // E the dEveloper — small interactions
 
+// Force to top of page
+window.addEventListener('load', function() {
+  window.scrollTo(0, 0);
+});
+
 // Footer year
 document.getElementById("year").textContent = new Date().getFullYear();
 
@@ -25,9 +30,9 @@ const observer = new IntersectionObserver((entries) => {
 }, { threshold: 0.12 });
 document.querySelectorAll(".reveal").forEach((el) => observer.observe(el));
 
-// Contact form -> opens the visitor's email app addressed to Ethan.
-// To collect submissions without an email app later, swap this handler
-// for a Formspree (or similar) form action.
+// Contact form, this opens the visitor's email app addressed to me (Ethan).
+// (Collect submissions without an email app later, swap this handler
+// for a Formspree form action).
 document.getElementById("contactForm").addEventListener("submit", (e) => {
   e.preventDefault();
   const name = document.getElementById("cfName").value.trim();
